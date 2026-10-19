@@ -1,0 +1,62 @@
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# React build outputs (Vite, Create React App)
+client/dist/
+client/build/
+**/dist/
+**/build/
+
+# Express build output (if using TypeScript)
+server/dist/
+server/build/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Package manager and tool caches
+.npm/
+.eslintcache
+.cache/
+.parcel-cache/
+.vite/
+
+# Coverage reports
+coverage/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+
+# Test artifacts
+playwright-report/
+test-results/
+
+# Local databases and uploaded development files (if applicable)
+*.sqlite
+*.sqlite3

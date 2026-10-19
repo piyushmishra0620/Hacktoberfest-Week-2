@@ -1,0 +1,108 @@
+:root {
+  --bg: #e8ecf0;
+  --panel: #f8fafb;
+  --ink: #17212b;
+  --muted: #5b6875;
+  --line: #cfd7df;
+  --steel: #2d5b87;
+  --steel-dark: #234a6f;
+  --good: #2f7d57;
+  --mid: #b27a12;
+  --low: #c2481b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Figtree', system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4 { font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; margin: 0; }
+
+.shell { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+
+.masthead { margin-bottom: 28px; }
+.masthead h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.masthead p { margin: 10px 0 0; color: var(--muted); max-width: 52ch; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.panel h2 { font-size: 1.4rem; margin-bottom: 16px; }
+.panel h3 { font-size: 1.05rem; margin: 26px 0 10px; }
+
+.form { display: grid; gap: 18px; }
+.field { display: grid; gap: 6px; font-weight: 500; font-size: 0.95rem; }
+input[type='text'], input[type='file'] {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #7fb0dc; outline-offset: 2px; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--steel);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { background: var(--steel-dark); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.muted { color: var(--muted); margin: 0; font-size: 0.92rem; }
+.error { color: var(--low); margin: 0; font-weight: 500; }
+.banner { background: #fbeee6; border: 1px solid #efc3ab; color: #7a2f0e; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; }
+
+/* score */
+.meter { margin-bottom: 14px; }
+.meter-number { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 4.5rem; line-height: 1; letter-spacing: -0.04em; }
+.meter-number span { font-size: 1.2rem; font-weight: 500; color: var(--muted); margin-left: 4px; letter-spacing: 0; }
+.meter-track { height: 12px; background: #dde3e9; border-radius: 99px; margin-top: 12px; overflow: hidden; }
+.meter-fill { height: 100%; border-radius: 99px; transition: width 0.8s ease; }
+.meter.good .meter-number, .meter.good .meter-fill { color: var(--good); background-color: var(--good); }
+.meter.mid .meter-number, .meter.mid .meter-fill { color: var(--mid); background-color: var(--mid); }
+.meter.low .meter-number, .meter.low .meter-fill { color: var(--low); background-color: var(--low); }
+.meter .meter-number { background-color: transparent; }
+
+.summary { margin: 0; max-width: 62ch; }
+
+.perfect { margin-top: 22px; padding: 16px; border: 1px solid #a9d3bd; background: #e9f6ef; border-radius: 8px; color: #1d5a3b; }
+
+.fixes { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.fixes li { border-left: 3px solid var(--steel); padding: 2px 0 2px 14px; }
+.fixes h4 { font-size: 1rem; }
+.fixes p { margin: 4px 0 0; }
+.fixes .issue { color: var(--muted); }
+
+ul.plain { margin: 0; padding-left: 20px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 0.85rem; padding: 3px 10px; border-radius: 99px; background: #dbe6f0; color: var(--steel-dark); }
+.chip.missing { background: #fff; border: 1px dashed var(--steel); }
+
+/* jobs */
+.jobs { list-style: none; margin: 0; padding: 0; }
+.jobs li { padding: 16px 0; border-top: 1px solid var(--line); }
+.jobs li:first-child { border-top: 0; padding-top: 0; }
+.job-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.job-head a { font-weight: 600; color: var(--steel-dark); text-decoration: none; }
+.job-head a:hover { text-decoration: underline; }
+.match { font-weight: 600; white-space: nowrap; color: var(--good); }
+.job-meta { margin: 2px 0 8px; color: var(--muted); font-size: 0.9rem; }
+
+@media (prefers-reduced-motion: reduce) { .meter-fill { transition: none; } }
